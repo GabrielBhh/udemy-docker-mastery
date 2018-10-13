@@ -2,9 +2,10 @@ version: '2'  # if no version is specificed then v1 is assumed. Recommend v2 min
 
 services:  # containers. same as docker run
   drupal:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
+      #The next two lines are necessary only if the Dockerfile has a different name and location
+      #context: .
+      #dockerfile: Dockerfile
     image: drupal:custom
     ports:
       - 8080:80
